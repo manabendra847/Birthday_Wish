@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <audio id="bg-music" loop></audio>
+
+    <button id="music-toggle" class="music-btn" aria-label="Toggle Music">
+        <span class="music-icon">♫</span>
+    </button>
+
+    <div id="cover" class="cover-screen">
+        <div class="cover-content">
+            <p id="cover-small-text" class="fade-up">A little something</p>
+            <h1 id="cover-title" class="fade-up delay-1">This one's for you</h1>
+            <button id="open-btn" class="fade-up delay-2">Tap to open <span class="arrow">↓</span></button>
+        </div>
+        <div class="cover-texture"></div>
+    </div>
+
+    <main id="main-content" class="hidden">
+        
+        <section id="hero-scroll-track" class="scroll-track">
+            <div class="sticky-frame">
+                <img id="hero-img" src="assets/photos/photo1.jpg" alt="Cinematic Intro" class="hero-bg">
+                <div class="hero-overlay"></div>
+                
+                <div class="hero-text-container">
+                    <h2 id="hero-intro" class="hero-anim-1">Another Beautiful Chapter Begins</h2>
+                    
+                    <div class="hero-main-reveal">
+                        <h1 id="hero-name" class="hero-anim-name">Name</h1>
+                            <span class="date">14<sup>th</sup> November</span>
+                        <div class="hero-divider"></div>
+                        <h3 id="hero-bday" class="hero-anim-bday">Happy Birthday</h3>
+                        <p id="hero-subtitle" class="hero-anim-sub">Subtitle goes here</p>
+                    </div>
+                </div>
+
+                <div class="scroll-indicator">
+                    <p>Scroll to begin</p>
+                    <div class="scroll-line"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="letter-section" class="section">
+            <div class="container letter-layout fade-in-section">
+                <div class="letter-image-col">
+                    <img id="letter-img" src="" alt="A memory" loading="lazy">
+                </div>
+                <div class="letter-text-col">
+                    <span id="letter-label" class="label">Label</span>
+                    <h2 id="letter-title" class="serif-title">Title</h2>
+                    <hr class="thin-divider">
+                    <div id="letter-message" class="letter-body"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="memory-section" class="section dark-section">
+            <div class="container fade-in-section">
+                <div class="section-header center">
+                    <span id="memory-label" class="label">Label</span>
+                    <h2 id="memory-title" class="serif-title">Title</h2>
+                </div>
+                <div class="timeline" id="timeline-container">
+                    <div class="timeline-line"></div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="reveal-section" class="section fade-in-section">
+            <div class="container">
+                <div class="section-header center">
+                    <h2 class="serif-title">Some memories are meant to be discovered.</h2>
+                    <p class="subtitle">Gently scratch the surface to reveal.</p>
+                </div>
+                <div id="reveal-container" class="reveal-grid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="wishes-section" class="section cream-section">
+            <div class="container fade-in-section">
+                <div class="section-header center">
+                    <span id="wishes-label" class="label dark-text"></span>
+                    <h2 id="wishes-title" class="serif-title dark-text">Title</h2>
+                </div>
+                <div class="wishes-grid" id="wishes-container">
+                    </div>
+            </div>
+        </section>
+
+        <section id="gallery-section" class="section">
+            <div class="container fade-in-section">
+                <div class="section-header center">
+                    <span id="gallery-label" class="label">Label</span>
+                    <h2 id="gallery-title" class="serif-title">Title</h2>
+                </div>
+                <div class="masonry-grid" id="gallery-container">
+                    </div>
+            </div>
+        </section>
+
+        <section id="rewind-section" class="section dark-section overflow-hidden">
+            <div class="rewind-header center fade-in-section">
+                <h2 id="rewind-title" class="tracking-title">REWIND</h2>
+                <p id="rewind-message" class="subtitle">Message</p>
+            </div>
+            
+            <div class="marquee-container">
+                <div class="marquee-track" id="marquee-track">
+                    </div>
+            </div>
+
+            <div class="rewind-footer center fade-in-section">
+                <p id="rewind-ending" class="serif-title italic">Ending</p>
+            </div>
+        </section>
+
+        <section id="final-section" class="section cinematic-final">
+            
+            <video id="final-video" class="final-bg-video hidden" autoplay loop muted playsinline></video>
+            <div id="final-video-overlay" class="final-video-overlay hidden"></div>
+
+            <div class="final-content fade-in-section">
+                <span id="final-label" class="label">Label</span>
+                <h1 id="final-title" class="serif-title giant">Title</h1>
+                <h2 id="final-name" class="name-highlight">Name</h2>
+                <p id="final-message" class="final-sub">Message</p>
+                
+                <button id="replay-btn" class="replay-btn mt-4">Replay Journey ↺</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
