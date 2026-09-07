@@ -57,14 +57,14 @@ const birthday = {
         },
         {
             year: "",
-            title: "SIP-3, Barapalaha 😊",
+            title: "SIP-3, Barpalaha 😊",
             text: "Exploring new places and creating memories that will last a lifetime.",
             image: "assets/photos/timeline/photo1.2.jpg",
             caption: "You & me with students"
         },
         {
             year: "",
-            title: "SIP-3, Barapalaha 💕",
+            title: "SIP-3, Barpalaha 💕",
             text: "Exploring new places and creating memories that will last a lifetime.",
             image: "assets/photos/timeline/photo1.2.1.jpg",
             caption: "You & me with colleagues"
@@ -127,7 +127,7 @@ const birthday = {
             message: `তুমি মোৰ বাবে 
                         অন্তহীন এটি গীত 
                         তুমি বিহীন সময় যে
-                        চঞ্চল অস্থিৰ চিত`,
+                        চঞ্চল অস্থিৰ চিত।`,
         },
         {
             name: "",
@@ -146,13 +146,13 @@ const birthday = {
         },
         {
             name: "",
-            relation: "12-০2-২০২৫",
+            relation: "১২-০২-২০২৫",
             message: `তোমাৰ উৰ্জ্জাৰ চিতিকনি লাগি
                         আজি মই প্ৰভাৱশালী,
                         কোমল ডেউকাৰ প্ৰচণ্ড কোবে 
                         দুয়োকে লৈ যায়
                         হৃদয়ৰ গোপন ছন্দত 
-                        আমাৰ সৃষ্টিৰ অনাদিলৈ,,,,,`
+                        আমাৰ সৃষ্টিৰ অনাদিলৈ...`
         }
     ],
 
