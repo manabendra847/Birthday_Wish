@@ -138,14 +138,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 galleryContainer.appendChild(div);
             });
 
-            // Populate Marquee (Double for infinite scroll illusion)
-            const marqueePhotos = [...allPhotos, ...allPhotos];
-            marqueePhotos.forEach(src => {
+            // --- PERFECT SEAMLESS MARQUEE LOOP ---
+            let basePhotos = [...allPhotos];
+            
+            // 1. Multiply photos until there are at least 10
+            while (basePhotos.length < 10) {
+                basePhotos = [...basePhotos, ...allPhotos];
+            }
+            
+            // 2. Double the massive array for the CSS animation loop
+            const loopPhotos = [...basePhotos, ...basePhotos];
+
+            loopPhotos.forEach(src => {
                 const img = document.createElement('img');
                 img.src = src;
                 img.className = 'marquee-img';
                 marqueeTrack.appendChild(img);
             });
+            // ------------------------------------
+
         } else {
             document.getElementById("gallery-section").classList.add("hidden");
             document.getElementById("rewind-section").classList.add("hidden");
