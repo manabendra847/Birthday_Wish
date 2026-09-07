@@ -49,52 +49,60 @@ const birthday = {
 
     memories: [
         {
-            title: "Title",
+            year: "",
+            title: "Saraswati Puja 😇",
             text: "A beautiful day that started it all. The world felt a little brighter.",
             image: "assets/photos/timeline/photo1.1.jpg",
-            caption: "A day to remember"
+            caption: "You & me with classmates"
         },
         {
-            title: "Unforgettable adventures",
+            year: "",
+            title: "SIP-3, Barapalaha 😊",
             text: "Exploring new places and creating memories that will last a lifetime.",
             image: "assets/photos/timeline/photo1.2.jpg",
-            caption: "Lost in the city"
+            caption: "You & me with students"
         },
         {
-            title: "Unforgettable adventures",
+            year: "",
+            title: "SIP-3, Barapalaha 💕",
             text: "Exploring new places and creating memories that will last a lifetime.",
             image: "assets/photos/timeline/photo1.2.1.jpg",
-            caption: "Lost in the city"
+            caption: "You & me with colleagues"
         },
         {
-            title: "Growing together",
+            year: "",
+            title: "At College 💚🖤❤️",
             text: "Through the laughs and the quiet moments, finding joy in the little things.",
             image: "assets/photos/timeline/photo1.3.jpg",
-            caption: "Sunset walks"
+            caption: "You & me with Classmates"
         },
         {
-            title: "Unforgettable adventures",
+            year: "",
+            title: "Unforgettable Moments ❤️",
             text: "Exploring new places and creating memories that will last a lifetime.",
             image: "assets/photos/timeline/photo1.4.jpg",
-            caption: "Lost in the city"
+            caption: "You and me ate together"
         },
         {
-            title: "Unforgettable adventures",
-            text: "Exploring new places and creating memories that will last a lifetime.",
+            year: "",
+            title: "Last Phase of College Life 😞",
+            text: "A sorrowful Moment of getting last phase of our college life.",
             image: "assets/photos/timeline/photo1.5.jpg",
-            caption: "Lost in the city"
+            caption: "You & me: Fun"
         },
         {
-            title: "Unforgettable adventures",
-            text: "Exploring new places and creating memories that will last a lifetime.",
+            year: "",
+            title: "My Sleeping Beauty 😴🥰",
+            text: "Your cutenss come arround to your deep face while sleepy. ",
             image: "assets/photos/timeline/photo1.6.jpg",
-            caption: "Lost in the city"
+            caption: "You & me: Video call"
         },
         {
-            title: "Unforgettable adventures",
-            text: "Exploring new places and creating memories that will last a lifetime.",
+            year: "",
+            title: "Our Teacher 🫠",
+            text: "Last moment with our supportive teacher on the last day of Final eaxam",
             image: "assets/photos/timeline/photo1.7.jpg",
-            caption: "Lost in the city"
+            caption: "You & me with our Teacher"
         }
 
     ],
