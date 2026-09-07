@@ -518,7 +518,7 @@ h4 {
 }
 
 .marquee-img {
-    height: 200px;
+    height: 100px;
     width: auto;
     /* NEW: Overrides the global max-width rule so images never get cut or squished */
     max-width: none !important; 
