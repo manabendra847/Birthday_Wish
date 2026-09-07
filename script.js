@@ -191,8 +191,9 @@ document.addEventListener("DOMContentLoaded", () => {
         let isDrawing = false;
         let scratchedPixels = 0;
 
+        // NEW: Detect if the user is on a phone/touch device
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-        // Calculates width/height dynamically when called
         function resizeCanvas() {
             if (isRevealed) return;
             canvas.width = canvas.offsetWidth;
@@ -201,63 +202,90 @@ document.addEventListener("DOMContentLoaded", () => {
             
             ctx.globalCompositeOperation = 'source-over';
             
-            // --- 1. Create a beautiful cinematic gradient ---
+            // The elegant cinematic gradient
             const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-            gradient.addColorStop(0, '#1a1a1a');      // Dark charcoal
-            gradient.addColorStop(0.5, '#3d3425');    // Subtle warm golden tint
-            gradient.addColorStop(1, '#050505');      // Deep dark
+            gradient.addColorStop(0, '#1a1a1a');      
+            gradient.addColorStop(0.5, '#3d3425');    
+            gradient.addColorStop(1, '#050505');      
             
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // --- 2. Add elegant instruction text ---
-            ctx.fillStyle = '#f7cb51'; // Template's golden accent color
-            ctx.font = 'italic 30px "Playfair Display", serif';
+            // NEW: Smart instructions (Ask for 2 fingers on mobile)
+            ctx.fillStyle = '#C2A878'; 
+            ctx.font = 'italic 18px "Playfair Display", serif';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            ctx.fillText('🤏👆 Scratch to reveal 👆🤏', canvas.width / 2, canvas.height / 2);
+            const instruction = isTouchDevice ? '✨ Use 2 fingers to scratch ✌️' : '✨ Scratch to reveal 🤏';
+            ctx.fillText(instruction, canvas.width / 2, canvas.height / 2);
             
             scratchedPixels = 0;
         }
 
-        // Initialize size immediately when called
         resizeCanvas();
 
         const getMousePos = (e) => {
             const rect = canvas.getBoundingClientRect();
-            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-            return { x: clientX - rect.left, y: clientY - rect.top };
+            return { x: e.clientX - rect.left, y: e.clientY - rect.top };
         };
 
         const scratch = (e) => {
             if (!isDrawing || isRevealed) return;
-            e.preventDefault();
-            const pos = getMousePos(e);
             
-            ctx.globalCompositeOperation = 'destination-out';
-            ctx.beginPath();
-            ctx.arc(pos.x, pos.y, 40, 0, Math.PI * 2);
-            ctx.fill();
+            // --- NEW: TOUCH (MOBILE) LOGIC ---
+            if (e.touches) {
+                // If only 1 finger is touching, let the screen scroll!
+                if (e.touches.length < 2) return; 
+                
+                // If 2 fingers are touching, block scrolling and scratch!
+                e.preventDefault(); 
+                ctx.globalCompositeOperation = 'destination-out';
+                
+                // Scratch under BOTH fingers for a better feel
+                for (let i = 0; i < 2; i++) {
+                    const rect = canvas.getBoundingClientRect();
+                    const x = e.touches[i].clientX - rect.left;
+                    const y = e.touches[i].clientY - rect.top;
+                    ctx.beginPath();
+                    ctx.arc(x, y, 40, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                scratchedPixels += (Math.PI * 40 * 40 * 2);
+            } 
+            // --- DESKTOP (MOUSE) LOGIC ---
+            else {
+                e.preventDefault();
+                const pos = getMousePos(e);
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.beginPath();
+                ctx.arc(pos.x, pos.y, 40, 0, Math.PI * 2);
+                ctx.fill();
+                scratchedPixels += (Math.PI * 40 * 40);
+            }
             
-            scratchedPixels += (Math.PI * 40 * 40); 
-            
-            if (scratchedPixels > (totalPixels * 1.5)) { 
+            // If roughly 60% scratched, reveal it
+            if (scratchedPixels > (totalPixels * 1.2)) { 
                 canvas.style.opacity = '0';
                 isRevealed = true;
                 setTimeout(() => canvas.style.display = 'none', 1000);
             }
         };
 
-        canvas.addEventListener('mousedown', () => isDrawing = true);
-        canvas.addEventListener('touchstart', (e) => { isDrawing = true; e.preventDefault(); }, {passive: false});
+        // Event Listeners
+        canvas.addEventListener('mousedown', () => { isDrawing = true; });
+        canvas.addEventListener('touchstart', (e) => { 
+            isDrawing = true; 
+            // Only stop scrolling if 2 fingers are used
+            if (e.touches && e.touches.length >= 2) {
+                e.preventDefault(); 
+            }
+        }, {passive: false});
         
-        window.addEventListener('mouseup', () => isDrawing = false);
-        window.addEventListener('touchend', () => isDrawing = false);
+        window.addEventListener('mouseup', () => { isDrawing = false; });
+        window.addEventListener('touchend', () => { isDrawing = false; });
         
         canvas.addEventListener('mousemove', scratch);
         canvas.addEventListener('touchmove', scratch, {passive: false});
-        
         window.addEventListener('resize', resizeCanvas);
     }
 
