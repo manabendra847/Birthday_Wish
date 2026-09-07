@@ -511,19 +511,25 @@ h4 {
 
 .marquee-track {
     display: flex;
-    gap: 20px;
-    animation: scrollMarquee 5s linear infinite;
+    /* NEW: Forces the track to stretch as long as it needs, ignoring screen size */
+    width: max-content; 
+    /* Increased time because the track will be much longer now */
+    animation: scrollMarquee 40s linear infinite; 
 }
 
 .marquee-img {
     height: 200px;
     width: auto;
+    /* NEW: Overrides the global max-width rule so images never get cut or squished */
+    max-width: none !important; 
     border-radius: 4px;
     opacity: 0.6;
     filter: grayscale(50%);
-    /* NEW: This stops the browser from squishing the photos on mobile! */
-    flex-shrink: 0; 
+    flex-shrink: 0;
+    /* NEW: Use margin instead of gap for more reliable loop math */
+    margin-right: 20px; 
 }
+
 @keyframes scrollMarquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
