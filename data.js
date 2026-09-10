@@ -103,8 +103,15 @@ const birthday = {
             text: "Last moment with our supportive teacher on the last day of Final eaxam",
             image: "assets/photos/timeline/photo1.7.jpg",
             caption: "You & me with our Teacher"
+        },       
+        {
+            year: "",
+            title: "What if...🧐",
+            text: "Imagination of us in the 80s",
+            image: "assets/photos/timeline/photo1.8.jpg",
+            caption: "You & me in 80s timeline"
         }
-
+        
     ],
 
     reveals: [
@@ -162,18 +169,21 @@ const birthday = {
     },
 
     galleryPhotos: [
-        { image: "assets/photos/photo1.jpg", caption: "Smiles" },
-        { image: "assets/photos/photo2.jpg", caption: "Adventures" },
-        { image: "assets/photos/photo3.jpg", caption: "Quiet days" },
-        { image: "assets/photos/photo4.jpg", caption: "Celebrations" },
-        { image: "assets/photos/photo5.jpg", caption: "Celebrations" },
-        { image: "assets/photos/photo6.jpg", caption: "Celebrations" },
-        { image: "assets/photos/photo7.jpg", caption: "Celebrations" },
-        { image: "assets/photos/photo8.jpg", caption: "Celebrations" },
-        { image: "assets/photos/photo9.jpg", caption: "Celebrations" },
-        { image: "assets/photos/photo10.jpg", caption: "Celebrations" },
-        { image: "assets/photos/photo11.jpg", caption: "Celebrations" },
-        { image: "assets/photos/photo12.jpg", caption: "Celebrations" },
+        { image: "assets/photos/photo1.jpg"},
+        { image: "assets/photos/photo2.jpg"},
+        { image: "assets/photos/photo3.jpg"},
+        { image: "assets/photos/photo4.jpg"},
+        { image: "assets/photos/photo5.jpg"},
+        { image: "assets/photos/photo6.jpg"},
+        { image: "assets/photos/photo7.jpg"},
+        { image: "assets/photos/photo8.jpg"},
+        { image: "assets/photos/photo9.jpg"},
+        { image: "assets/photos/photo10.jpg"},
+        { image: "assets/photos/photo11.jpg"},
+        { image: "assets/photos/photo13.jpg"},
+        { image: "assets/photos/photo14.jpg"},
+        { image: "assets/photos/photo15.jpg"},
+        { image: "assets/photos/photo16.jpg"},
     ],
 
     final: {
