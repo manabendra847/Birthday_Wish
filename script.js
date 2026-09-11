@@ -372,6 +372,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // --- 6. Intersection Observers (Fade In Sections) ---
+    // --- 6. Intersection Observers (Fade In Sections) ---
     function initObservers() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -381,7 +382,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15 });
+        // CHANGED: Lowered from 0.15 to 0.02 so it never gets stuck on small mobile screens!
+        }, { threshold: 0.02 }); 
 
         document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
     }
