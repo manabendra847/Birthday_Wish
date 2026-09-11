@@ -623,8 +623,14 @@ h4 {
     .memory-point { left: 20px; top: 0; transform: translateX(-4px); }
     
     .music-btn { bottom: 20px; right: 20px; width: 40px; height: 40px; font-size: 1.2rem; }
-}
 
+    /* --- NEW: Fixes the memory wall layout on mobile --- */
+    .masonry-grid {
+        grid-template-columns: repeat(2, 1fr); /* Forces 2 columns on phones */
+        gap: 10px;
+    }
+    /* --------------------------------------------------- */
+}
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
