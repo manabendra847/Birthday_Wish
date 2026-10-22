@@ -83,6 +83,13 @@ const birthday = {
             image: "assets/photos/timeline/photo1.4.jpg",
             caption: "You and me ate together"
         },
+                {
+            year: "",
+            title: "Unforgettable Moments ❤️",
+            text: "Our bonding is like cold ice cream in the summer...",
+            image: "assets/photos/timeline/photo1.9.jpg",
+            caption: "You and me ate together"
+        },
         {
             year: "",
             title: "Last Phase of College Life 😞",
@@ -103,15 +110,14 @@ const birthday = {
             text: "Last moment with our supportive teacher on the last day of Final eaxam",
             image: "assets/photos/timeline/photo1.7.jpg",
             caption: "You & me with our Teacher"
-        },       
-        {
+        },        {
             year: "",
             title: "What if...🧐",
             text: "Imagination of us in the 80s",
             image: "assets/photos/timeline/photo1.8.jpg",
             caption: "You & me in 80s timeline"
         }
-        
+
     ],
 
     reveals: [
@@ -150,18 +156,9 @@ const birthday = {
                         তোমাৰ উপস্থিতিৰ মূল্যৰ,
                         এয়া যে প্ৰেমেই অতুল্য
                         যʼত মোৰ জীৱন ধন্য ধন্য।।`
-        },
-        {
-            name: "",
-            relation: "১২-০২-২০২৫",
-            message: `তোমাৰ উৰ্জ্জাৰ চিতিকনি লাগি
-                        আজি মই প্ৰভাৱশালী,
-                        কোমল ডেউকাৰ প্ৰচণ্ড কোবে 
-                        দুয়োকে লৈ যায়
-                        হৃদয়ৰ গোপন ছন্দত 
-                        আমাৰ সৃষ্টিৰ অনাদিলৈ...`
         }
     ],
+    
 
     gallery: {
         label: "The memory wall",
