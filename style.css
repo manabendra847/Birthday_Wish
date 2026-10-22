@@ -292,7 +292,7 @@ h4 {
 .letter-body {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: rgba(255,255,255,0.8);
+    color: rgba(190, 255, 38, 0.8);
     white-space: pre-line;
 }
 
@@ -409,10 +409,10 @@ h4 {
 }
 
 .wish-card {
-    background: #fff;
+    background: #9afc2b;
     padding: 2.5rem;
     border-radius: 2px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 50px 50px 50px rgba(0,0,0,0.05);
     transition: transform 0.3s;
 }
 
@@ -424,6 +424,150 @@ h4 {
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
+
+
+
+/* Romantic photo gallery with four PNG corners */
+.memory-gallery {
+  --frame-color: #c9a66b;
+
+  position: relative;
+  margin: 50px auto;
+  padding: 65px 35px;
+  width: 80%;
+  box-sizing: border-box;
+
+  border: 2px solid var(--frame-color);
+  outline: 1px solid rgba(201, 166, 107, 0.55);
+  outline-offset: 7px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 250, 245, 0.97),
+    rgba(255, 240, 243, 0.95)
+  );
+
+  box-shadow: 0 10px 35px rgba(80, 45, 45, 0.12);
+  border-radius: 12px;
+}
+
+/* Four decorative PNG corners */
+.gallery-corner {
+  position: absolute;
+  width: 105px;
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.12));
+}
+
+.gallery-corner.top-left {
+  top: -35px;
+  left: -28px;
+  transform: rotate(-12deg);
+}
+
+.gallery-corner.top-right {
+  top: -35px;
+  right: -28px;
+  transform: scaleX(-1) rotate(-12deg);
+}
+
+.gallery-corner.bottom-left {
+  bottom: -35px;
+  left: -28px;
+  transform: none;
+}
+
+.gallery-corner.bottom-right {
+  bottom: -35px;
+  right: -28px;
+  transform: none;
+}
+
+/* Gallery heading */
+.gallery-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.gallery-content h2 {
+  color: #754b50;
+  font-family: Georgia, serif;
+  margin: 5px 0 10px;
+}
+
+.gallery-content p {
+  color: #8c7070;
+  margin-bottom: 30px;
+}
+
+/* Photos */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+
+.photo-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+  border: 5px solid white;
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  box-shadow: 0 5px 16px rgba(80, 45, 45, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-grid img:hover {
+  transform: scale(1.025);
+  box-shadow: 0 9px 22px rgba(80, 45, 45, 0.22);
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+  .photo-grid img {
+    height: auto;
+  }
+}
+
+  .gallery-corner {
+    width: 70px;
+  }
+
+  .gallery-corner.top-left,
+  .gallery-corner.top-right {
+    top: -25px;
+  }
+
+  .gallery-corner.bottom-left,
+  .gallery-corner.bottom-right {
+    bottom: -25px;
+  }
+
+  .gallery-corner.top-left,
+  .gallery-corner.bottom-left {
+    left: -20px;
+  }
+
+  .gallery-corner.top-right,
+  .gallery-corner.bottom-right {
+    right: -20px;
+  }
+
+  .photo-grid {
+    gap: 12px;
+  }
+
+  .photo-grid img {
+    height: 155px;
+  }
 
 
 
@@ -611,6 +755,7 @@ h4 {
 }
 
 
+
 /* =========================================
    FLORAL DISPLAY FRAME
    Decorative frame around the whole website
@@ -670,6 +815,115 @@ body::before {
     transform: scale(-1);
 }
 
+/* Keep the frame elegant on small screens */
+@media (max-width: 600px) {
+    :root {
+        --floral-frame-inset: 7px;
+    }
+
+    .floral-corner {
+        font-size: 24px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .floral-corner {
+        animation: none !important;
+    }
+}
+
+
+/* ==========================================
+   DECORATIVE SECTION FRAMES
+   Add to the END of style.css
+========================================== */
+
+:root {
+    --section-frame-color: rgba(0, 153, 20, 0.55);
+    --section-frame-inset: 18px;
+    --section-frame-radius: 10px;
+}
+
+/* Apply this class to any section */
+.decorative-frame {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Main inset border */
+.decorative-frame::before {
+    content: "";
+    position: absolute;
+    inset: var(--section-frame-inset);
+    border: 5px solid var(--section-frame-color);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Small decorative floral corners */
+.decorative-frame::after {
+    content: "❧❦❧";
+    position: absolute;
+    top: 22px;
+    left: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: space-between;
+    color: #007704;
+    font-family: Georgia, serif;
+    font-size: 21px;
+    line-height: 1;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Keep the content above its background */
+.decorative-frame > * {
+    position: relative;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    :root {
+        --section-frame-inset: 10px;
+    }
+
+    .decorative-frame::after {
+        top: 13px;
+        left: 18px;
+        right: 18px;
+        font-size: 16px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .decorative-frame::before,
+    .decorative-frame::after {
+        animation: none !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Responsive */
@@ -685,14 +939,8 @@ body::before {
     .memory-point { left: 20px; top: 0; transform: translateX(-4px); }
     
     .music-btn { bottom: 20px; right: 20px; width: 40px; height: 40px; font-size: 1.2rem; }
-
-    /* --- NEW: Fixes the memory wall layout on mobile --- */
-    .masonry-grid {
-        grid-template-columns: repeat(2, 1fr); /* Forces 2 columns on phones */
-        gap: 10px;
-    }
-    /* --------------------------------------------------- */
 }
+
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
