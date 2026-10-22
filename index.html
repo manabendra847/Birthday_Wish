@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -8,14 +9,16 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets\photos\favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets\photos\favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
+
 
     <!-- Floral display frame corners -->
     <span class="floral-corner floral-top-left" aria-hidden="true">❀</span>
@@ -23,7 +26,8 @@
     <span class="floral-corner floral-bottom-left" aria-hidden="true">❀</span>
     <span class="floral-corner floral-bottom-right" aria-hidden="true">❀</span>
 
-    
+
+
     <audio id="bg-music" loop></audio>
 
     <button id="music-toggle" class="music-btn" aria-label="Toggle Music">
@@ -40,20 +44,20 @@
     </div>
 
     <main id="main-content" class="hidden">
-        
+
         <section id="hero-scroll-track" class="scroll-track">
             <div class="sticky-frame">
                 <img id="hero-img" src="assets/photos/photo1.jpg" alt="Cinematic Intro" class="hero-bg">
                 <div class="hero-overlay"></div>
-                
+
                 <div class="hero-text-container">
                     <h2 id="hero-intro" class="hero-anim-1">Another Beautiful Chapter Begins</h2>
-                    
+
                     <div class="hero-main-reveal">
                         <h1 id="hero-name" class="hero-anim-name">Name</h1>
                         <h3 id="hero-bday" class="hero-anim-bday">Happy Birthday</h3>
                         <div class="hero-divider"></div>
-                            <h4>14<sup>th</sup> November</h4>
+                        <h4>14<sup>th</sup> November</h4>
                         <p id="hero-subtitle" class="hero-anim-sub">Subtitle goes here</p>
                     </div>
                 </div>
@@ -87,7 +91,7 @@
                 </div>
                 <div class="timeline" id="timeline-container">
                     <div class="timeline-line"></div>
-                    </div>
+                </div>
             </div>
         </section>
 
@@ -98,20 +102,42 @@
                     <p class="subtitle">✌️🤏Gently scratch the surface to reveal.✌️🤏</p>
                 </div>
                 <div id="reveal-container" class="reveal-grid">
-                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="wishes-section" class="section cream-section">
+        <section id="wishes-section" class="section cream-section decorative-frame">
             <div class="container fade-in-section">
                 <div class="section-header center">
                     <span id="wishes-label" class="label dark-text"></span>
                     <h2 id="wishes-title" class="serif-title dark-text">Title</h2>
                 </div>
                 <div class="wishes-grid" id="wishes-container">
-                    </div>
+                </div>
             </div>
         </section>
+
+
+        <section class="memory-gallery">
+            <!-- Decorative corner PNGs -->
+            <img src="assets/couple.png" class="gallery-corner top-left" alt="">
+            <img src="assets/couple.png" class="gallery-corner top-right" alt="">
+            <img src="assets/couple.png" class="gallery-corner bottom-left" alt="">
+            <img src="assets/couple.png" class="gallery-corner bottom-right" alt="">
+
+            <div class="gallery-content">
+                <h2>Your Precious Gift for ME</h2>
+                <p>Every Gift holds a special memory.</p>
+
+                <div class="photo-grid">
+                    <img src="assets/photos/gift1.jpg" alt="Memory 1">
+                    <img src="assets/photos/gift2.png" alt="Memory 2">
+                    <img src="assets/photos/gift3.jpg" alt="Memory 3">
+                    <img src="assets/photos/gift4.jpg" alt="Memory 4">
+                </div>
+            </div>
+        </section>
+
 
         <section id="gallery-section" class="section">
             <div class="container fade-in-section">
@@ -120,7 +146,7 @@
                     <h2 id="gallery-title" class="serif-title">Title</h2>
                 </div>
                 <div class="masonry-grid" id="gallery-container">
-                    </div>
+                </div>
             </div>
         </section>
 
@@ -129,10 +155,10 @@
                 <h2 id="rewind-title" class="tracking-title">REWIND</h2>
                 <p id="rewind-message" class="subtitle">Message</p>
             </div>
-            
+
             <div class="marquee-container">
                 <div class="marquee-track" id="marquee-track">
-                    </div>
+                </div>
             </div>
 
             <div class="rewind-footer center fade-in-section">
@@ -141,7 +167,7 @@
         </section>
 
         <section id="final-section" class="section cinematic-final">
-            
+
             <video id="final-video" class="final-bg-video hidden" autoplay loop muted playsinline></video>
             <div id="final-video-overlay" class="final-video-overlay hidden"></div>
 
@@ -150,7 +176,7 @@
                 <h1 id="final-title" class="serif-title giant">Title</h1>
                 <h2 id="final-name" class="name-highlight">Name</h2>
                 <p id="final-message" class="final-sub">Message</p>
-                
+
                 <button id="replay-btn" class="replay-btn mt-4">Replay Journey ↺</button>
             </div>
         </section>
@@ -159,4 +185,5 @@
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
