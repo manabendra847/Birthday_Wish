@@ -610,6 +610,68 @@ h4 {
     transform: none;
 }
 
+
+/* =========================================
+   FLORAL DISPLAY FRAME
+   Decorative frame around the whole website
+========================================= */
+
+:root {
+    --floral-frame-color: rgba(225, 196, 151, 0.78);
+    --floral-frame-inset: 1px;
+    --floral-frame-width: 3px;
+}
+
+/* Fixed frame around the viewport */
+body::before {
+    content: "";
+    position: fixed;
+    inset: var(--floral-frame-inset);
+    border: var(--floral-frame-width) solid var(--floral-frame-color);
+    pointer-events: none;
+    z-index: 9998;
+}
+
+
+
+/* Decorative floral corners */
+.floral-corner {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    color: #d9bd91;
+    font-family: Georgia, serif;
+    font-size: 32px;
+    line-height: 1;
+    opacity: 0.9;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.2);
+}
+
+.floral-top-left {
+    top: 0px;
+    left: 0px;
+}
+
+.floral-top-right {
+    top: 0px;
+    right: 0px;
+    transform: scaleX(-1);
+}
+
+.floral-bottom-left {
+    bottom: 0px;
+    left: 0px;
+    transform: scaleY(-1);
+}
+
+.floral-bottom-right {
+    bottom: 0px;
+    right: 0px;
+    transform: scale(-1);
+}
+
+
+
 /* Responsive */
 @media (max-width: 768px) {
     .letter-layout { grid-template-columns: 1fr; gap: 2rem; }
