@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday Priyangshi! 💖✨</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts (Including Assamese/Bengali Script Support) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Tiro+Bengali:ital@0;1&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Configuration for Vibrant Purple, Pink, Green & Yellow Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPurple: '#5b21b6',
+                        brandViolet: '#7c3aed',
+                        brandPink: '#ec4899',
+                        brandRose: '#f43f5e',
+                        brandGreen: '#10b981',
+                        brandYellow: '#f59e0b',
+                        brandAmber: '#fbbf24',
+                        cream: '#fefce8'
+                    },
+                    fontFamily: {
+                        cursive: ['"Great Vibes"', 'cursive'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                        assamese: ['"Noto Serif Bengali"', '"Tiro Bengali"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --color-bg-dark: #1e1b4b;
+            --color-bg-darker: #0f172a;
+            --color-bg-cream: #fefce8;
+            --color-text-light: #fdfbf7;
+            --color-text-dark: #1e293b;
+            --color-accent: #f59e0b;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, #2e1065 0%, #3b0764 35%, #701a75 70%, #831843 100%);
+            color: var(--color-text-light);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        body.locked {
+            overflow: hidden;
+        }
+
+        /* Floating particles canvas */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Glassmorphism Styles */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(124, 58, 237, 0.25);
+        }
+
+        .glass-card-light {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(253, 224, 71, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(236, 72, 153, 0.2);
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #f43f5e 0%, #ec4899 35%, #fbbf24 70%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-assamese {
+            background: linear-gradient(135deg, #fde047 0%, #f43f5e 50%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Floral Frame Corners */
+        .floral-corner {
+            position: fixed;
+            z-index: 9999;
+            pointer-events: none;
+            color: #f59e0b;
+            font-family: Georgia, serif;
+            font-size: 28px;
+            opacity: 0.9;
+            text-shadow: 0 0 10px rgba(236, 72, 153, 0.6);
+        }
+
+        .floral-top-left {
+            top: 8px;
+            left: 8px;
+        }
+
+        .floral-top-right {
+            top: 8px;
+            right: 8px;
+            transform: scaleX(-1);
+        }
+
+        .floral-bottom-left {
+            bottom: 8px;
+            left: 8px;
+            transform: scaleY(-1);
+        }
+
+        .floral-bottom-right {
+            bottom: 8px;
+            right: 8px;
+            transform: scale(-1);
+        }
+
+        /* 1. Scroll-Driven Hero Styling */
+        .scroll-track {
+            height: 300vh;
+            position: relative;
+        }
+
+        .sticky-frame {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.1);
+            will-change: transform;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.4) 0%, rgba(30, 27, 75, 0.85) 100%);
+        }
+
+        .hero-text-container {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .hero-anim-1,
+        .hero-main-reveal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            opacity: 0;
+            will-change: opacity, transform;
+        }
+
+        .hero-divider {
+            height: 2px;
+            background: linear-gradient(90deg, #f43f5e, #fbbf24, #10b981);
+            width: 0px;
+            margin: 15px auto;
+            transition: width 0.5s ease;
+        }
+
+        /* 2. Scratch Canvas Styling */
+        .reveal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .reveal-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(251, 191, 36, 0.4);
+            touch-action: none;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .reveal-hidden {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .scratch-canvas {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+            transition: opacity 0.8s ease;
+            cursor: pointer;
+        }
+
+        /* 3. Final Cinematic Video Styling */
+        .cinematic-final {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-bg-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        .final-video-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(46, 16, 101, 0.6) 50%, rgba(15, 23, 42, 0.9) 100%);
+            z-index: 1;
+        }
+
+        .final-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Marquee Animation */
+        .marquee-container {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            padding: 3rem 0;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: scrollMarquee 35s linear infinite;
+        }
+
+        .marquee-img {
+            height: 130px;
+            width: auto;
+            max-width: none !important;
+            border-radius: 12px;
+            border: 2px solid rgba(251, 191, 36, 0.4);
+            margin-right: 18px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes scrollMarquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Photo Hover 3D Effects */
+        .photo-card {
+            transition: all 0.4s ease;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.4), 0 0 20px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Fade observer */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Music Equalizer */
+        .eq-bar {
+            width: 3px;
+            background-color: #ec4899;
+            border-radius: 3px;
+            animation: equalize 1.2s infinite ease-in-out alternate;
+        }
+
+        .eq-bar:nth-child(1) {
+            height: 16px;
+            animation-delay: -0.4s;
+        }
+
+        .eq-bar:nth-child(2) {
+            height: 24px;
+            animation-delay: -0.2s;
+        }
+
+        .eq-bar:nth-child(3) {
+            height: 12px;
+            animation-delay: -0.6s;
+        }
+
+        .eq-bar:nth-child(4) {
+            height: 20px;
+            animation-delay: -0.1s;
+        }
+
+        @keyframes equalize {
+            0% {
+                height: 6px;
+            }
+
+            100% {
+                height: 24px;
+            }
+        }
+
+        .paused .eq-bar {
+            animation-play-state: paused;
+            height: 6px !important;
+        }
+    </style>
+</head>
+
+<body class="locked">
+
+    <!-- Floral Corner Accents -->
+    <span class="floral-corner floral-top-left" aria-hidden="true">❀</span>
+    <span class="floral-corner floral-top-right" aria-hidden="true">❀</span>
+    <span class="floral-corner floral-bottom-left" aria-hidden="true">❀</span>
+    <span class="floral-corner floral-bottom-right" aria-hidden="true">❀</span>
+
+    <!-- Particles Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Background Audio -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="assets/music/birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Cover Overlay Screen -->
+    <div id="cover"
+        class="fixed inset-0 z-50 bg-gradient-to-br from-purple-950 via-fuchsia-900 to-rose-950 flex flex-col items-center justify-center p-6 text-center transition-all duration-1000">
+        <div class="space-y-6 max-w-md animate-pulse">
+            <div
+                class="w-24 h-24 bg-gradient-to-tr from-yellow-400 via-pink-500 to-emerald-400 rounded-full flex items-center justify-center mx-auto shadow-2xl p-1">
+                <div class="w-full h-full bg-purple-950 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-cake-candles text-4xl text-yellow-300"></i>
+                </div>
+            </div>
+            <p id="cover-small-text" class="text-emerald-300 text-sm tracking-widest uppercase font-semibold">A little
+                something</p>
+            <h1 id="cover-title" class="font-serif text-4xl sm:text-5xl text-white font-bold leading-tight">This one's
+                for you</h1>
+
+            <button id="open-btn"
+                class="mt-6 px-8 py-4 bg-gradient-to-r from-yellow-400 via-pink-500 to-emerald-400 text-purple-950 rounded-full font-bold shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3 mx-auto text-base">
+                <span>Tap to Open Celebration 🎉</span>
+                <i class="fa-solid fa-arrow-down"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main id="main-content" class="hidden relative z-20">
+
+        <!-- Navigation Bar -->
+        <nav class="sticky top-0 z-40 bg-purple-950/70 backdrop-blur-md border-b border-pink-500/30 px-4 py-3">
+            <div class="max-w-6xl mx-auto flex justify-between items-center">
+                <a href="#"
+                    class="font-cursive text-3xl font-bold text-yellow-300 tracking-wide flex items-center gap-2">
+                    <span>Happy Birthday</span>
+                    <i class="fa-solid fa-heart text-pink-500 text-sm"></i>
+                </a>
+                <div class="hidden md:flex items-center space-x-6 text-sm text-purple-200">
+                    <a href="#hero-scroll-track" class="hover:text-yellow-300 transition-colors">Intro</a>
+                    <a href="#letter-section" class="hover:text-yellow-300 transition-colors">Letter</a>
+                    <a href="#timeline-section" class="hover:text-yellow-300 transition-colors">Memories</a>
+                    <a href="#reveal-section" class="hover:text-yellow-300 transition-colors">Scratch</a>
+                    <a href="#wishes-section" class="hover:text-yellow-300 transition-colors">Wishes</a>
+                    <a href="#gallery-section" class="hover:text-yellow-300 transition-colors">Gallery</a>
+                </div>
+                <button id="musicToggleBtn"
+                    class="bg-pink-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-xs font-semibold shadow-lg transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-music"></i> Toggle Music
+                </button>
+            </div>
+        </nav>
+
+        <!-- 1. Restored Scroll-Driven Hero Section with Background Photo -->
+        <section id="hero-scroll-track" class="scroll-track">
+            <div class="sticky-frame">
+                <img id="hero-img" src="assets/photos/photo1.jpg" alt="Cinematic Intro Photo" class="hero-bg"
+                    onerror="this.src='https://placehold.co/1200x800/2e1065/ffffff?text=Priyangshi'">
+                <div class="hero-overlay"></div>
+
+                <div class="hero-text-container">
+                    <h2 id="hero-intro"
+                        class="hero-anim-1 font-serif text-2xl sm:text-4xl italic text-yellow-300 font-semibold">
+                        Another Beautiful Chapter Begins
+                    </h2>
+
+                    <div class="hero-main-reveal">
+                        <h3 id="hero-bday" class="font-cursive text-4xl sm:text-6xl text-pink-400 font-bold mt-2">Happy
+                            Birthday</h3>
+
+                        <h1 id="hero-name"
+                            class="font-serif text-5xl sm:text-8xl font-extrabold text-white tracking-tight">Priyangshi
+                        </h1>
+                        <div class="hero-divider"></div>
+                        <h4 class="text-emerald-300 font-serif text-xl sm:text-2xl font-bold py-2">14<sup>th</sup>
+                            November</h4>
+                        <p id="hero-subtitle" class="font-assamese text-yellow-200 text-lg sm:text-xl max-w-xl mx-auto">
+                            Today is all about celebrating you.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center text-xs tracking-widest text-purple-200 uppercase opacity-80 z-20">
+                    <p>Scroll down to begin</p>
+                    <i class="fa-solid fa-chevron-down animate-bounce mt-2 text-pink-400"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Letter Section -->
+        <section id="letter-section" class="py-20 px-4 max-w-5xl mx-auto">
+            <div
+                class="glass-card rounded-3xl p-6 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center border border-pink-400/30">
+                <div class="overflow-hidden rounded-2xl shadow-2xl border-2 border-yellow-400/40">
+                    <img id="letter-img" src="assets/photos/Letter.jpg" alt="A Memory" class="w-full h-80 object-cover"
+                        onerror="this.src='https://placehold.co/600x600/7c3aed/ffffff?text=Priyangshi'">
+                </div>
+                <div class="space-y-4">
+                    <span id="letter-label" class="text-emerald-400 font-semibold text-xs tracking-widest uppercase">A
+                        moment to remember</span>
+                    <h2 id="letter-title" class="font-serif text-3xl sm:text-4xl font-bold text-yellow-300">❤️I Love You
+                        PU❤️</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-pink-500 to-yellow-400 rounded-full"></div>
+                    <div id="letter-message"
+                        class="font-assamese text-pink-100 text-base sm:text-lg leading-relaxed whitespace-pre-line pt-2">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Memory Timeline Section -->
+        <section id="timeline-section" class="py-20 px-4 max-w-5xl mx-auto">
+            <div class="text-center space-y-3 mb-16">
+                <span id="memory-label" class="text-yellow-300 font-semibold text-xs tracking-widest uppercase">You &
+                    Me</span>
+                <h2 id="memory-title" class="font-serif text-3xl sm:text-5xl font-bold text-white">A collection of
+                    little moments</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-emerald-400 to-pink-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div id="timeline-container" class="space-y-8">
+                <!-- Dynamic Timeline Items injected here -->
+            </div>
+        </section>
+
+        <!-- 2. Restored Scratch Reveal Section with Hidden Image Overlay -->
+        <section id="reveal-section" class="py-20 px-4 max-w-5xl mx-auto">
+            <div class="text-center space-y-3 mb-10">
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-yellow-300">Some memories are meant to be
+                    discovered</h2>
+                <p class="text-pink-200 text-sm">✌️ Scratch the gold surface with your finger or mouse to reveal ✌️</p>
+            </div>
+            <div id="reveal-container" class="reveal-grid">
+                <!-- Canvases injected dynamically -->
+            </div>
+        </section>
+
+        <!-- Wishes Section -->
+        <section id="wishes-section" class="py-20 px-4 max-w-5xl mx-auto">
+            <div class="text-center space-y-3 mb-12">
+                <span id="wishes-label" class="text-emerald-400 text-xs font-semibold tracking-widest uppercase">Special
+                    Notes</span>
+                <h2 id="wishes-title" class="font-serif text-3xl sm:text-5xl font-bold text-white">A few words for you
+                </h2>
+            </div>
+            <div id="wishes-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Wishes cards injected dynamically -->
+            </div>
+        </section>
+
+        <!-- Gift Gallery Section -->
+        <section class="py-16 px-4 max-w-5xl mx-auto">
+            <div class="glass-card-light rounded-3xl p-6 sm:p-10 text-center space-y-6 text-slate-800">
+                <h2 class="font-serif text-3xl font-bold text-purple-900">Your Precious Gift for ME</h2>
+                <p class="text-slate-600 text-sm">Every Gift holds a special memory.</p>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <img src="assets/photos/gift1.jpg" alt="Gift 1"
+                        class="rounded-xl border-4 border-white shadow-md hover:scale-105 transition-transform h-44 w-full object-cover"
+                        onerror="this.src='https://placehold.co/400x400/ec4899/ffffff?text=Gift+1'">
+                    <img src="assets/photos/gift2.png" alt="Gift 2"
+                        class="rounded-xl border-4 border-white shadow-md hover:scale-105 transition-transform h-44 w-full object-cover"
+                        onerror="this.src='https://placehold.co/400x400/f59e0b/ffffff?text=Gift+2'">
+                    <img src="assets/photos/gift3.jpg" alt="Gift 3"
+                        class="rounded-xl border-4 border-white shadow-md hover:scale-105 transition-transform h-44 w-full object-cover"
+                        onerror="this.src='https://placehold.co/400x400/10b981/ffffff?text=Gift+3'">
+                    <img src="assets/photos/gift4.jpg" alt="Gift 4"
+                        class="rounded-xl border-4 border-white shadow-md hover:scale-105 transition-transform h-44 w-full object-cover"
+                        onerror="this.src='https://placehold.co/400x400/8b5cf6/ffffff?text=Gift+4'">
+                </div>
+            </div>
+        </section>
+
+        <!-- Assamese Decorative Name Section -->
+        <section id="assamese-decorative" class="py-16 px-4 max-w-4xl mx-auto">
+            <div
+                class="glass-card rounded-3xl p-8 sm:p-12 text-center border-2 border-yellow-400/50 shadow-2xl space-y-6">
+                <div class="flex items-center justify-center gap-3">
+                    <span class="h-0.5 w-12 bg-gradient-to-r from-transparent via-yellow-400 to-pink-500"></span>
+                    <i class="fa-solid fa-heart text-pink-400 text-xl"></i>
+                    <span class="h-0.5 w-12 bg-gradient-to-r from-pink-500 via-yellow-400 to-transparent"></span>
+                </div>
+
+                <div class="font-assamese space-y-3">
+                    <h3 class="text-yellow-300 text-lg tracking-wide">সদায়ে তোমাৰ কাষত</h3>
+                    <h1 class="gradient-assamese text-4xl sm:text-6xl font-bold leading-relaxed">
+                        নিতুস্মিতা & মানবেন্দ্ৰ
+                    </h1> 
+                    <p class="text-emerald-300 text-sm sm:text-base font-light italic">
+                        "জীৱনৰ প্ৰতিটো ক্ষণ তোমাৰ সৈতে হাঁহিৰে সজাব বিচাৰোঁ..."
+                    </p>
+                </div>
+
+                <div class="flex justify-center gap-2 text-yellow-300 text-xs">
+                    <span>✨ মৰমেৰে ✨</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Memory Wall Gallery Section -->
+        <section id="gallery-section" class="py-20 px-4 max-w-6xl mx-auto">
+            <div class="text-center space-y-3 mb-12">
+                <span id="gallery-label" class="text-yellow-300 text-xs font-semibold tracking-widest uppercase">The
+                    Memory Wall</span>
+                <h2 id="gallery-title" class="font-serif text-3xl sm:text-5xl font-bold text-white">Moments worth
+                    keeping</h2>
+            </div>
+            <div id="gallery-container" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Gallery photos injected dynamically -->
+            </div>
+        </section>
+
+        <!-- Rewind Section -->
+        <section id="rewind-section" class="py-16 overflow-hidden">
+            <div class="text-center space-y-2 mb-6">
+                <h2 id="rewind-title"
+                    class="font-serif text-5xl sm:text-7xl font-extrabold text-yellow-400/20 tracking-widest">REWIND
+                </h2>
+                <p id="rewind-message" class="text-pink-200 text-sm">One more look at the moments that made this year
+                    beautiful.</p>
+            </div>
+            <div class="marquee-container">
+                <div class="marquee-track" id="marquee-track">
+                    <!-- Images duplicated via JS for loop -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Restored Final Cinematic Video Section -->
+        <section id="final-section" class="cinematic-final px-4">
+            <video id="final-video" class="final-bg-video" autoplay loop muted playsinline>
+                <source src="assets/videos/final.mp4" type="video/mp4">
+            </video>
+            <div class="final-video-overlay"></div>
+
+            <div class="final-content space-y-6">
+                <div class="text-center mt-6">
+                    <p id="rewind-ending" class="font-serif italic text-yellow-300 text-lg">Until the next chapter.</p>
+                </div>
+                <span id="final-label" class="text-emerald-300 text-xs font-semibold tracking-widest uppercase">A
+                    Kiss</span>
+                <h1 id="final-title" class="font-serif text-4xl sm:text-7xl font-bold text-white">Happy Birthday</h1>
+                <h2 id="final-name" class="font-cursive text-5xl sm:text-8xl text-yellow-300">Priyangshi</h2>
+                <p id="final-message" class="text-pink-200 text-base sm:text-lg max-w-md mx-auto">And the story
+                    continues.</p>
+
+                <button id="replay-btn"
+                    class="mt-8 px-8 py-3.5 bg-gradient-to-r from-pink-500 to-yellow-400 text-purple-950 rounded-full font-bold shadow-xl hover:scale-105 transition-all">
+                    Replay Journey ↺
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-xs text-purple-300/60 relative z-20">
+        <p>Created with love by <a href="https://www.facebook.com/manabendra847" target="_blank"
+                class="text-yellow-300 underline font-semibold">Manabendra Nath</a></p>
+    </footer>
+
+    <!-- Floating Audio Control -->
+    <div
+        class="fixed bottom-6 left-6 z-40 bg-purple-950/90 backdrop-blur-md border border-pink-500/40 rounded-full shadow-2xl p-2 pr-5 flex items-center gap-3">
+        <button id="floatingPlayBtn"
+            class="w-10 h-10 bg-gradient-to-r from-pink-500 to-yellow-400 text-purple-950 rounded-full flex items-center justify-center shadow-md">
+            <i id="playIcon" class="fa-solid fa-play text-sm"></i>
+        </button>
+        <div class="flex flex-col">
+            <span class="text-xs font-bold text-white">Birthday Melodies</span>
+            <span class="text-[10px] text-pink-300">Priyangshi's Song</span>
+        </div>
+        <div id="equalizer" class="flex items-center gap-1 ml-2 paused">
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // 1. Birthday Data Object
+        const birthday = {
+            settings: { replayShowsCover: true, musicEnabled: true, animations: true },
+            person: { name: "Priyangshi", intro: "Another beautiful chapter begins", birthdayMessage: "Happy Birthday", subtitle: "Today is all about celebrating you." },
+            cover: { smallText: "A little something", title: "This one's for you", button: "Tap to open" },
+            letter: {
+                label: "A moment to remember",
+                title: "❤️I Love You PU❤️",
+                message: `ভাল পাওঁ...
+কেৱল ভাল পাবৰ বাবেই ভাল নাপাওঁ।
+তোমাক কেৱল মই ভাল পাওঁ
+সেইবাবেই ভাল পাওঁ।
+অবুজ অবুজ?
+মই প্ৰেমত পাগল নহয়,
+মই পাগল প্ৰেমিক
+সেয়াও কেৱল তোমাৰ বাবেহে...
+
+ভাল পোৱাৰ সংজ্ঞা নাজানো
+মই যে নিজেই এক ভালপোৱাৰ অবুজ সংজ্ঞা
+আৰু তুমিয়েই তাৰ সমাধান।
+
+সেয়ে তুমি উপজিলা অজানিতে
+এই দিনটোতেই
+মাথো ভাল পাবলৈ
+মোক...`,
+                image: "assets/photos/Letter.jpg"
+            },
+            memorySection: { label: "You & Me", title: "A collection of little moments." },
+            memories: [
+                { year: "", title: "Saraswati Puja 😇", text: "A beautiful day that started it all. The world felt a little brighter.", image: "assets/photos/timeline/photo1.1.jpg", caption: "You & me with classmates" },
+                { year: "", title: "SIP-3, Barpalaha 😊", text: "Exploring new places and creating memories that will last a lifetime.", image: "assets/photos/timeline/photo1.2.jpg", caption: "You & me with students" },
+                { year: "", title: "SIP-3, Barpalaha 💕", text: "Exploring new places and creating memories that will last a lifetime.", image: "assets/photos/timeline/photo1.2.1.jpg", caption: "You & me with colleagues" },
+                { year: "", title: "At College 💚🖤❤️", text: "Through the laughs and the quiet moments, finding joy in the little things.", image: "assets/photos/timeline/photo1.3.jpg", caption: "You & me with Classmates" },
+                { year: "", title: "Unforgettable Moments ❤️", text: "Exploring new places and creating memories that will last a lifetime.", image: "assets/photos/timeline/photo1.4.jpg", caption: "You and me ate together" },
+                { year: "", title: "Unforgettable Moments ❤️", text: "Our bonding is like cold ice cream in the summer...", image: "assets/photos/timeline/photo1.9.jpg", caption: "You and me ate together" },
+                { year: "", title: "Last Phase of College Life 😞", text: "A sorrowful Moment of getting last phase of our college life.", image: "assets/photos/timeline/photo1.5.jpg", caption: "You & me: Fun" },
+                { year: "", title: "My Sleeping Beauty 😴🥰", text: "Your cutenss come arround to your deep face while sleepy.", image: "assets/photos/timeline/photo1.6.jpg", caption: "You & me: Video call" },
+                { year: "", title: "Our Teacher 🫠", text: "Last moment with our supportive teacher on the last day of Final eaxam", image: "assets/photos/timeline/photo1.7.jpg", caption: "You & me with our Teacher" },
+                { year: "", title: "What if...🧐", text: "Imagination of us in the 80s", image: "assets/photos/timeline/photo1.8.jpg", caption: "You & me in 80s timeline" }
+            ],
+            reveals: [
+                { title: "Special Memory", message: "A memory stored forever.", image: "assets/photos/reveal1.jpg" }
+            ],
+            wishesSection: { title: "A few words for you." },
+            wishes: [
+                { name: "", relation: "২৭-১০-২০২৫", message: `তুমি মোৰ বাবে\nঅন্তহীন এটি গীত\nতুমি বিহীন সময় যে\nচঞ্চল অস্থিৰ চিত।` },
+                { name: "", relation: "২৭-০২-২০২৫", message: `তোমাৰ ভংগিমাত মই অহংকাৰী হৈ পৰো\nলাহে লাহে বাঢ়ি আহে তোমাৰ আকুলতা।\nতুমি জানা নে?` },
+                { name: "", relation: "২৮-০৩-২০২৫", message: `এবাৰ আঁতৰি লʼব পাৰা প্ৰমাণ\nতোমাৰ উপস্থিতিৰ মূল্যৰ,\nএয়া যে প্ৰেমেই অতুল্য\nযʼত মোৰ জীৱন ধন্য ধন্য।।` }
+            ],
+            gallery: { label: "The memory wall", title: "Moments worth keeping." },
+            galleryPhotos: [
+                { image: "assets/photos/photo1.jpg" }, { image: "assets/photos/photo2.jpg" },
+                { image: "assets/photos/photo3.jpg" }, { image: "assets/photos/photo4.jpg" },
+                { image: "assets/photos/photo5.jpg" }, { image: "assets/photos/photo6.jpg" },
+                { image: "assets/photos/photo7.jpg" }, { image: "assets/photos/photo8.jpg" },
+                { image: "assets/photos/photo9.jpg" }, { image: "assets/photos/photo10.jpg" }
+            ],
+            final: { label: "A Kiss", title: "Happy Birthday", message: "And the story continues.", name: "Priyangshi", video: "assets/videos/final.mp4" },
+            rewind: { title: "REWIND", message: "One more look at the moments that made this year beautiful.", ending: "Until the next chapter." }
+        };
+
+        // 2. Dynamic Canvas Floating Hearts / Particles Effect
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const particles = [];
+        for (let i = 0; i < 30; i++) {
+            particles.push({
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
+                size: Math.random() * 8 + 6,
+                speedY: Math.random() * 1.2 + 0.4,
+                speedX: Math.random() * 0.8 - 0.4,
+                opacity: Math.random() * 0.6 + 0.2,
+                color: `hsla(${Math.random() * 60 + 310}, 90%, 65%, ${Math.random() * 0.5 + 0.3})`
+            });
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.y -= p.speedY;
+                p.x += p.speedX;
+                if (p.y < -20) p.y = canvas.height + 20;
+
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.fillStyle = p.color;
+                ctx.beginPath();
+                const topCurveHeight = p.size * 0.3;
+                ctx.moveTo(0, topCurveHeight);
+                ctx.bezierCurveTo(0, 0, -p.size / 2, 0, -p.size / 2, topCurveHeight);
+                ctx.bezierCurveTo(-p.size / 2, (p.size + topCurveHeight) / 2, 0, p.size, 0, p.size);
+                ctx.bezierCurveTo(0, p.size, p.size / 2, (p.size + topCurveHeight) / 2, p.size / 2, topCurveHeight);
+                ctx.bezierCurveTo(p.size / 2, 0, 0, 0, 0, topCurveHeight);
+                ctx.closePath();
+                ctx.fill();
+                ctx.restore();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // 3. Populate Content Dynamically
+        function populateContent() {
+            document.getElementById("cover-small-text").textContent = birthday.cover.smallText;
+            document.getElementById("cover-title").textContent = birthday.cover.title;
+
+            document.getElementById("hero-intro").textContent = birthday.person.intro;
+            document.getElementById("hero-bday").textContent = birthday.person.birthdayMessage;
+            document.getElementById("hero-name").textContent = birthday.person.name;
+            document.getElementById("hero-subtitle").textContent = birthday.person.subtitle;
+
+            document.getElementById("letter-label").textContent = birthday.letter.label;
+            document.getElementById("letter-title").textContent = birthday.letter.title;
+            document.getElementById("letter-message").textContent = birthday.letter.message;
+            if (birthday.letter.image) document.getElementById("letter-img").src = birthday.letter.image;
+
+            document.getElementById("memory-label").textContent = birthday.memorySection.label;
+            document.getElementById("memory-title").textContent = birthday.memorySection.title;
+
+            // Render Timeline Cards
+            const timeline = document.getElementById("timeline-container");
+            birthday.memories.forEach((mem, idx) => {
+                const item = document.createElement('div');
+                item.className = 'glass-card rounded-2xl p-6 border border-pink-400/30 grid grid-cols-1 md:grid-cols-2 gap-6 items-center photo-card';
+                item.innerHTML = `
+                    <div class="space-y-2">
+                        <span class="text-xs font-semibold text-yellow-300 uppercase tracking-wider">Memory #${idx + 1}</span>
+                        <h3 class="font-serif text-2xl font-bold text-white">${mem.title}</h3>
+                        <p class="text-pink-100 text-sm leading-relaxed">${mem.text}</p>
+                        ${mem.caption ? `<p class="text-emerald-300 text-xs italic font-serif">"${mem.caption}"</p>` : ''}
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg border border-pink-400/30 flex items-center justify-center bg-black/40 p-1 min-h-[220px] sm:min-h-[260px] max-h-[380px] w-full">
+                        <img src="${mem.image}" alt="${mem.title}" class="w-full h-full max-h-[360px] object-contain rounded-lg" onerror="this.src='https://placehold.co/600x400/ec4899/ffffff?text=Our+Memory'">
+                    </div>
+                `;
+                timeline.appendChild(item);
+            });
+
+            // Render Wishes
+            const wishesContainer = document.getElementById("wishes-container");
+            birthday.wishes.forEach(wish => {
+                const card = document.createElement('div');
+                card.className = 'glass-card rounded-2xl p-6 font-assamese border border-yellow-400/40 space-y-3';
+                card.innerHTML = `
+                    <p class="text-yellow-200 text-base leading-relaxed italic">"${wish.message}"</p>
+                    <div class="pt-2 border-t border-pink-400/30 flex justify-between items-center text-xs text-emerald-300 font-sans">
+                        <span>${wish.name}</span>
+                        <span>${wish.relation}</span>
+                    </div>
+                `;
+                wishesContainer.appendChild(card);
+            });
+
+            // Render Gallery & Marquee
+            const galleryContainer = document.getElementById("gallery-container");
+            const marqueeTrack = document.getElementById("marquee-track");
+            const allImages = [...birthday.galleryPhotos.map(p => p.image), ...birthday.memories.map(m => m.image)];
+
+            birthday.galleryPhotos.forEach(photo => {
+                const imgWrap = document.createElement('div');
+                imgWrap.className = 'rounded-xl overflow-hidden shadow-md h-48 border border-pink-400/20 photo-card';
+                imgWrap.innerHTML = `<img src="${photo.image}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x400/f59e0b/ffffff?text=Priyangshi'">`;
+                galleryContainer.appendChild(imgWrap);
+            });
+
+            // Duplicate images for infinite Marquee loop
+            const loopImages = [...allImages, ...allImages, ...allImages];
+            loopImages.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.className = 'marquee-img';
+                img.onerror = () => { img.src = 'https://placehold.co/200x200/ec4899/ffffff?text=Memory'; };
+                marqueeTrack.appendChild(img);
+            });
+
+            // Build Scratch Canvas Cards
+            buildReveals();
+        }
+
+        // 4. Scratch Reveal Implementation Fix
+        function buildReveals() {
+            const container = document.getElementById("reveal-container");
+            if (!birthday.reveals || birthday.reveals.length === 0) return;
+
+            birthday.reveals.forEach((rev, idx) => {
+                const card = document.createElement('div');
+                card.className = 'reveal-card';
+                card.innerHTML = `
+                    <img src="${rev.image}" class="reveal-hidden" onerror="this.src='https://placehold.co/600x800/f43f5e/ffffff?text=Surprise+Memory'">
+                    <canvas class="scratch-canvas" id="scratch-${idx}"></canvas>
+                `;
+                container.appendChild(card);
+                setTimeout(() => initScratchCanvas(document.getElementById(`scratch-${idx}`)), 100);
+            });
+        }
+
+        function initScratchCanvas(canvas) {
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let totalPixels = 0;
+            let isRevealed = false;
+            let isDrawing = false;
+            let scratchedPixels = 0;
+
+            function resizeScratchCanvas() {
+                if (isRevealed) return;
+                const rect = canvas.parentElement.getBoundingClientRect();
+                canvas.width = rect.width || 300;
+                canvas.height = rect.height || 375;
+                totalPixels = canvas.width * canvas.height;
+
+                ctx.globalCompositeOperation = 'source-over';
+                const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+                gradient.addColorStop(0, '#5b21b6');
+                gradient.addColorStop(0.5, '#7c3aed');
+                gradient.addColorStop(1, '#f59e0b');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.fillStyle = '#fde047';
+                ctx.font = 'bold 18px "Playfair Display", serif';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('✨ Scratch here to reveal ✌️', canvas.width / 2, canvas.height / 2);
+            }
+
+            resizeScratchCanvas();
+
+            function scratchAtPosition(clientX, clientY) {
+                if (isRevealed) return;
+                const rect = canvas.getBoundingClientRect();
+                const x = clientX - rect.left;
+                const y = clientY - rect.top;
+
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.beginPath();
+                ctx.arc(x, y, 40, 0, Math.PI * 2);
+                ctx.fill();
+
+                scratchedPixels += (Math.PI * 40 * 40 * 0.75);
+
+                if (scratchedPixels > totalPixels * 0.35) {
+                    canvas.style.opacity = '0';
+                    isRevealed = true;
+                    setTimeout(() => canvas.style.display = 'none', 800);
+                }
+            }
+
+            // Pointer event handlers for unified mouse + touch scratching
+            canvas.addEventListener('pointerdown', (e) => {
+                isDrawing = true;
+                canvas.setPointerCapture(e.pointerId);
+                scratchAtPosition(e.clientX, e.clientY);
+            });
+
+            canvas.addEventListener('pointermove', (e) => {
+                if (isDrawing) {
+                    scratchAtPosition(e.clientX, e.clientY);
+                }
+            });
+
+            const stopScratching = (e) => {
+                isDrawing = false;
+                try { canvas.releasePointerCapture(e.pointerId); } catch (err) { }
+            };
+
+            canvas.addEventListener('pointerup', stopScratching);
+            canvas.addEventListener('pointercancel', stopScratching);
+
+            // Prevent default touch scrolling inside scratch canvas card
+            canvas.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+            }, { passive: false });
+
+            window.addEventListener('resize', resizeScratchCanvas);
+        }
+
+        // 5. Scroll-Driven Hero Animation Logic
+        function initScrollAnimation() {
+            const track = document.getElementById('hero-scroll-track');
+            const img = document.getElementById('hero-img');
+            const intro = document.getElementById('hero-intro');
+            const mainReveal = document.querySelector('.hero-main-reveal');
+            const divider = document.querySelector('.hero-divider');
+            if (!track || !img) return;
+
+            window.addEventListener('scroll', () => {
+                const rect = track.getBoundingClientRect();
+                if (rect.bottom > 0 && rect.top <= 0) {
+                    const trackHeight = track.offsetHeight - window.innerHeight;
+                    let progress = -rect.top / trackHeight;
+                    progress = Math.max(0, Math.min(1, progress));
+
+                    const scale = 1.1 + (progress * 0.25);
+                    img.style.transform = `scale(${scale})`;
+
+                    if (progress < 0.5) {
+                        let introOp = 0;
+                        if (progress > 0.05 && progress < 0.2) introOp = (progress - 0.05) * 6.6;
+                        if (progress >= 0.2 && progress <= 0.35) introOp = 1;
+                        if (progress > 0.35 && progress < 0.45) introOp = 1 - ((progress - 0.35) * 10);
+
+                        intro.style.opacity = Math.max(0, introOp);
+                        mainReveal.style.opacity = 0;
+                    } else {
+                        intro.style.opacity = 0;
+                        let mainOp = (progress - 0.5) * 2.5;
+                        mainReveal.style.opacity = Math.max(0, Math.min(1, mainOp));
+
+                        if (progress > 0.7) {
+                            divider.style.width = Math.min(120, (progress - 0.7) * 400) + 'px';
+                        } else {
+                            divider.style.width = '0px';
+                        }
+                    }
+                }
+            });
+        }
+
+        // Audio & Interaction Handling
+        const audio = document.getElementById('bg-music');
+        const floatingPlayBtn = document.getElementById('floatingPlayBtn');
+        const playIcon = document.getElementById('playIcon');
+        const equalizer = document.getElementById('equalizer');
+        let isPlaying = false;
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                playIcon.classList.replace('fa-pause', 'fa-play');
+                equalizer.classList.add('paused');
+            } else {
+                audio.play().then(() => {
+                    playIcon.classList.replace('fa-play', 'fa-pause');
+                    equalizer.classList.remove('paused');
+                }).catch(() => { });
+            }
+            isPlaying = !isPlaying;
+        }
+
+        floatingPlayBtn.addEventListener('click', toggleAudio);
+        document.getElementById('musicToggleBtn').addEventListener('click', toggleAudio);
+
+        // Open Celebration Button
+        document.getElementById('open-btn').addEventListener('click', () => {
+            const cover = document.getElementById('cover');
+            cover.classList.add('opacity-0', 'pointer-events-none');
+            document.getElementById('main-content').classList.remove('hidden');
+            document.body.classList.remove('locked');
+
+            // Try playing video in final section
+            const video = document.getElementById('final-video');
+            if (video) video.play().catch(() => { });
+
+            toggleAudio();
+            initScrollAnimation();
+        });
+
+        // Replay Journey
+        document.getElementById('replay-btn').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Intersection Observer for scroll animations
+        function initObservers() {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            populateContent();
+            initObservers();
+        });
+    </script>
+</body>
+
+</html>
