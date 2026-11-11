@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Happy Birthday Priyangshi! 💖✨</title>
+    <title>Happy Birthday Priyangshi!</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -222,7 +222,7 @@
             aspect-ratio: 4/5;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
             border: 2px solid rgba(251, 191, 36, 0.4);
-            touch-action: none;
+            touch-action: auto;
             user-select: none;
             -webkit-user-select: none;
         }
@@ -384,11 +384,11 @@
 
 <body class="locked">
 
-    <!-- Floral Corner Accents -->
+    <!-- Floral Corner Accents 
     <span class="floral-corner floral-top-left" aria-hidden="true">❀</span>
     <span class="floral-corner floral-top-right" aria-hidden="true">❀</span>
     <span class="floral-corner floral-bottom-left" aria-hidden="true">❀</span>
-    <span class="floral-corner floral-bottom-right" aria-hidden="true">❀</span>
+    <span class="floral-corner floral-bottom-right" aria-hidden="true">❀</span>-->
 
     <!-- Particles Background -->
     <canvas id="particles-canvas"></canvas>
@@ -441,7 +441,7 @@
                     <a href="#gallery-section" class="hover:text-yellow-300 transition-colors">Gallery</a>
                 </div>
                 <button id="musicToggleBtn"
-                    class="bg-pink-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-xs font-semibold shadow-lg transition-all flex items-center gap-2">
+                    class="bg-pink-600 hover:bg-pink-500 text-white px-1 py-2 rounded-full text-xs font-semibold shadow-lg transition-all flex items-center gap-2">
                     <i class="fa-solid fa-music"></i> Toggle Music
                 </button>
             </div>
@@ -928,26 +928,52 @@
                 }
             }
 
-            // Pointer event handlers for unified mouse + touch scratching
-            canvas.addEventListener('pointerdown', (e) => {
-                isDrawing = true;
-                canvas.setPointerCapture(e.pointerId);
-                scratchAtPosition(e.clientX, e.clientY);
-            });
+        
+// Mouse scratching only
+canvas.addEventListener('pointerdown', (e) => {
+    if (e.pointerType !== 'mouse') return;
 
-            canvas.addEventListener('pointermove', (e) => {
-                if (isDrawing) {
-                    scratchAtPosition(e.clientX, e.clientY);
-                }
-            });
+    isDrawing = true;
+    canvas.setPointerCapture(e.pointerId);
+    scratchAtPosition(e.clientX, e.clientY);
+});
 
-            const stopScratching = (e) => {
-                isDrawing = false;
-                try { canvas.releasePointerCapture(e.pointerId); } catch (err) { }
-            };
+canvas.addEventListener('pointermove', (e) => {
+    if (e.pointerType === 'mouse' && isDrawing) {
+        scratchAtPosition(e.clientX, e.clientY);
+    }
+});
 
-            canvas.addEventListener('pointerup', stopScratching);
-            canvas.addEventListener('pointercancel', stopScratching);
+canvas.addEventListener('pointerup', () => {
+    isDrawing = false;
+});
+
+canvas.addEventListener('pointercancel', () => {
+    isDrawing = false;
+});
+
+
+// Two-finger scratching only
+canvas.addEventListener('touchstart', (e) => {
+    if (e.touches.length >= 2) {
+        e.preventDefault();
+
+        for (const touch of e.touches) {
+            scratchAtPosition(touch.clientX, touch.clientY);
+        }
+    }
+}, { passive: false });
+
+canvas.addEventListener('touchmove', (e) => {
+    if (e.touches.length >= 2) {
+        e.preventDefault();
+
+        for (const touch of e.touches) {
+            scratchAtPosition(touch.clientX, touch.clientY);
+        }
+    }
+}, { passive: false });
+
 
             // Prevent default touch scrolling inside scratch canvas card
             canvas.addEventListener('touchmove', (e) => {
